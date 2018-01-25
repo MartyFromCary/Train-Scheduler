@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Train Scheduler</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/TrainScheduler.css">
+
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="text-center">Train Scheduler</h1>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <h4>Current Train Schedule</h4>
+      </div>
+      <div class="panel-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Train Name</th>
+              <th scope="col">Destination</th>
+              <th scope="col">Frequency (min)</th>
+              <th scope="col">Start Time</th>
+              <th scope="col">Next Arrival</th>
+              <th scope="col">Minutes Away</th>
+            </tr>
+          </thead>
+          <tbody id="tbodyTrains">
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <h4>Add Train</h4>
+      </div>
+      <div class="panel-body">
+        <form id="main-form">
+          <div class="form-group">
+            <label for="train-name">Train Name</label>
+            <input type="text" class="form-control" id="train-name" name="train-name">
+          </div>
+          <div class="form-group">
+            <label for="train-destination">Destination</label>
+            <input type="text" class="form-control" id="train-destination" name="train-destination">
+          </div>
+          <div class="form-group">
+            <label for="train-firsttime">First Train Time (24-hr Format, HH:MM)</label>
+            <input type="text" class="form-control" id="train-firsttime" name="train-firsttime">
+          </div>
+          <div class="form-group">
+            <label for="train-frequency">Frequency (minutes)</label>
+            <input type="number" class="form-control" id="train-frequency" name="train-frequency">
+          </div>
+
+          <button type="submit" class="btn btn-success">Submit</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+    <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Input Error</h4>
+        </div>
+        <div class="modal-body">
+          <div id="input-error">Some text in the modal.</div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/moment@2.20.1/moment.min.js"></script>
+  <script src="assets/js/TrainScheduler.js"></script>
+
+</body>
+
+</html>
